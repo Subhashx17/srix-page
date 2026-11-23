@@ -1,0 +1,31 @@
+/* Step 8 polish. Small, safe fixes. Loaded last so it can win. */
+
+/* Layout shift: keep the scrollbar space when the page stops scrolling (Human layer). */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Images: never wider than the box, keep the shape while loading. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contrast: about 6.3:1 on the paper color. */
+#surface .hero__hint,
+#surface .contact__plain-label {
+  color: #5a564d;
+}
+
+/* Screenshot mode (?og): hide the buttons so the picture is clean. */
+html.og-shot .layers,
+html.og-shot .sound-toggle {
+  display: none;
+}
+
+@media (prefers-contrast: more) {
+  #surface .hero__hint,
+  #surface .contact__plain-label {
+    color: #121212;
+  }
+}

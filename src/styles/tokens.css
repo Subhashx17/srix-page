@@ -1,0 +1,55 @@
+:root {
+  /* Layer colors (names fixed by the brief) */
+  --paper: #f3efe6;
+  --ink: #121212;
+  --accent: #ff4d00;
+  --bp: #0a2a5e;
+  --src: #0e0f12;
+  --mem: #000000;
+  --sil: #000000;
+
+  /* Extra colors for the deep layers */
+  --amber: #ffb000;
+  --cyan: #00e5ff;
+
+  /* Surface helpers */
+  --ink-2: #5c584f; /* quiet text, about 6:1 on paper */
+  --line: rgba(18, 18, 18, 0.2); /* hairlines */
+  --grid-line: rgba(18, 18, 18, 0.04); /* faint vertical texture */
+
+  /* Fonts */
+  --font-head: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter Variable', Inter, system-ui, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', Consolas, monospace;
+
+  /* Fluid type scale (about 360px to 1600px wide) */
+  --step--1: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --step-2: clamp(1.375rem, 1.2rem + 0.8vw, 1.875rem);
+  --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+  --step-4: clamp(2.25rem, 1.6rem + 3vw, 4.25rem);
+  --step-name: clamp(3.5rem, 1.47rem + 9.03vw, 10.5rem); /* 56px to 168px */
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  --space-l: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+  --space-xl: clamp(3rem, 2.2rem + 3.2vw, 5rem);
+  --space-2xl: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+  /* Layout */
+  --measure: 80rem; /* 1280px */
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  --col-gap: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 700ms;
+  --dur-fast: 220ms;
+
+  color-scheme: light;
+}
