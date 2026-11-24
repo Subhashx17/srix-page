@@ -1,4 +1,10 @@
 /* ---------- Base ---------- */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
 *,
 *::before,
 *::after {
@@ -14,6 +20,38 @@ html {
   html {
     scroll-behavior: smooth;
   }
+}
+
+@font-face {
+  font-family: "Aalto Display";
+  src: url("./fonts/aalto-display-personal-use.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("./fonts/BodoniModa-VariableFont_opsz,wght") format("opentype");
+  font-weight: 400;
+  font-style: Bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "dirtyline";
+  src: url("./fonts/dirtyline-36daysoftype-2022.otf") format("opentype");
+  font-weight: 400;
+  font-style: Bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marmalede";
+  src: url("./fonts/marmalede.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -52,14 +90,20 @@ body::before {
   color: var(--paper);
 }
 
-h1,
+h1 {
+  margin: 0;
+  font-size: large;
+  font-family: "dirtyline", sans-serif;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
 h2,
 h3 {
   margin: 0;
-  font-family: var(--font-head);
-  font-weight: 400;
-  line-height: 1.05;
-  text-wrap: balance;
+  font-size: larger;
+  font-family: "Marmalede";
+  font-weight: 50;
 }
 
 h2 {
@@ -68,6 +112,8 @@ h2 {
 }
 
 p {
+  font-family: "Bodoni Moda", Bold;
+  line-height: normal;
   margin: 0 0 var(--space-s);
   max-width: 40rem;
   text-wrap: pretty;
@@ -81,7 +127,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--brand);
   text-decoration-thickness: 2px;
 }
 
@@ -99,6 +145,8 @@ a:hover {
 .links,
 .tags,
 .now-list {
+  font-family: "Bodoni Moda";
+  font-style: bold;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -154,6 +202,7 @@ a:hover {
 }
 
 .brand {
+  font-family: "dirtyline";
   padding-block: 0.6rem;
   font-family: var(--font-head);
   font-size: var(--step-1);
@@ -178,13 +227,14 @@ a:hover {
 
 .nav a:hover {
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--brand);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.4em;
 }
 
 /* ---------- Hero ---------- */
 .hero {
+  font-family: "dirtyline";
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -196,10 +246,11 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: var(--step-name);
+  font-size: clamp(3.5rem, 11vw, 12rem);
   line-height: 0.95;
-  letter-spacing: -0.025em;
-  overflow-wrap: anywhere;
+  letter-spacing: -0.015em;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .nobreak {
@@ -212,7 +263,7 @@ a:hover {
   height: 0.13em;
   margin-left: 0.05em;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--celadon);
 }
 
 .hero__bottom {
@@ -392,7 +443,7 @@ a:hover {
   top: 0.08em;
   bottom: 0.08em;
   width: 3px;
-  background: var(--accent);
+  background: var(--brand);
   opacity: 0;
   transform: scaleY(0.4);
   transform-origin: top;
@@ -636,4 +687,187 @@ a:hover {
   .project__row:has(:focus-visible) .project__title-text {
     transform: none;
   }
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Geist Variable', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ---------- Aceternity Hero Text Effect ---------- */
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
+}
+
+.hero-name-effect {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 1200 / 180;
+  flex: 1;
+  min-width: 0;
+  cursor: crosshair;
+}
+
+.hero-name-effect svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-hover-svg-text {
+  fill: transparent;
+  font-family: "dirtyline", sans-serif;
+  font-size: 150px;
+  font-weight: 400;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero-title {
+  container-type: inline-size;
+}
+
+
+.hero-hover-svg-text {
+  fill: transparent;
+  stroke: currentColor;
+  font-family: "dirtyline", sans-serif;
+  font-size: 150px;
+  font-weight: 400;
+  letter-spacing: -2px;
 }

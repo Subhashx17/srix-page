@@ -56,7 +56,11 @@ function renderHero(c) {
   return `
     <section id="hero" class="block hero" data-block="hero" aria-labelledby="hero-title">
       <p class="eyebrow">${esc(c.hero.eyebrow)}</p>
-      <h1 id="hero-title">${esc(first)} <span class="nobreak">${esc(last)}<span class="dot" aria-hidden="true"></span></span></h1>
+      <div class="hero-title">
+        <h1 id="hero-title" class="visually-hidden">${esc(first)} ${esc(last)}</h1>
+        <div id="hero-name-effect" class="hero-name-effect" aria-hidden="true"></div>
+        <span class="dot" aria-hidden="true"></span>
+      </div>
       <div class="hero__bottom">
         <div class="hero__body">
           <p class="hero__headline">${esc(c.hero.headline)}</p>

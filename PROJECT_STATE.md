@@ -6,7 +6,7 @@ Keep every name and structure exactly as written here. Other Claude accounts do 
 The page is only the top layer (Surface). A glass lens follows the cursor. When the user presses and holds, the lens drills down. Inside the circle the page opens in 4 rings: Blueprint (biggest), Source, Memory, Silicon (smallest, in the center). Let go and it springs back. Every layer is built live from the REAL content under the lens: real HTML, real bytes, real bits. A 5th layer (Human) opens when the visitor keeps holding at full depth (step 6), or with key 5 / the Layers panel (step 7). Any layer can also be "peeled" over the whole screen (step 7).
 
 ## THE LOOKS
-- Surface: paper #F3EFE6, ink #121212, one accent #FF4D00. Instrument Serif for headings, Inter for body. Calm, spacious, editorial, very professional.
+- Surface: dark theme: background ("paper") dark indigo #13123A, text ("ink") pale celadon #E4F1E8, accents soft indigo #9D9BF5 and celadon #8FD0AE. Instrument Serif for headings, Inter for body. Calm, spacious, editorial, very professional.
 - Blueprint: #0A2A5E, white 1px lines.
 - Source: #0E0F12, syntax colors, JetBrains Mono.
 - Memory: #000000, amber #FFB000 hex dump.
@@ -47,7 +47,7 @@ PowerShell 5.1 shows UTF-8 files garbled (â€”, Ã©) unless you use: Get-Co
 - The texts of the Layers button and panel are written in English inside src/deep/layers-ui.js (not in content.js).
 
 ## STEP 2 DESIGN DIRECTION (done)
-Editorial and quiet, like a high-end print magazine. One accent (#FF4D00), used rarely. Huge Instrument Serif name (56px to 168px, tight line height) with a small accent dot. Small uppercase JetBrains Mono labels like "§ 02 — Work". 12-column grid, max 1280px, 1px hairlines, faint vertical grid-line texture (about 4%). No gradients as decoration, no glassmorphism, no stock shadows. Work = full-width numbered rows with <details> case study; hover slides the title 12px and shows a small accent bar. Stack and Now = plain typographic lists. Fade-up on scroll, off with prefers-reduced-motion. Sticky minimal header (name left, 3 links right). Strong :focus-visible. Text contrast at least 4.5:1. Quiet empty spot bottom-left of the hero (div.hero__hint) for the hint "Hold anywhere to look deeper" (shown by intro.js).
+Editorial and quiet, like a high-end print magazine. Dark theme: indigo background, celadon text, soft indigo and celadon accents, used rarely. Huge Instrument Serif name (56px to 168px, tight line height) with a small accent dot. Small uppercase JetBrains Mono labels like "§ 02 — Work". 12-column grid, max 1280px, 1px hairlines, faint vertical grid-line texture (about 4%). No gradients as decoration, no glassmorphism, no stock shadows. Work = full-width numbered rows with <details> case study; hover slides the title 12px and shows a small accent bar. Stack and Now = plain typographic lists. Fade-up on scroll, off with prefers-reduced-motion. Sticky minimal header (name left, 3 links right). Strong :focus-visible. Text contrast at least 4.5:1. Quiet empty spot bottom-left of the hero (div.hero__hint) for the hint "Hold anywhere to look deeper" (shown by intro.js).
 
 ## STEP 3 SPEC (done): the lens
 - #deep with 4 children .deep-layer[data-layer="1".."4"]: position fixed, inset 0, pointer-events none, layer 4 on top, each clipped with clip-path: circle(var(--rN) at var(--lx) var(--ly)). 4 thin glowing rings follow the same circles.
@@ -203,7 +203,7 @@ header, hero, about, work-head, work-anchor, work-usbcam, work-underneath, work-
 
 ## KNOWN ISSUES
 - The Surface is built by JavaScript. With JavaScript off, only a short message shows (noscript). Later step: pre-render the HTML at build time.
-- Accent #FF4D00 on paper is about 2.9:1 contrast, so it is used only for the dot, the hover bar, the charge ring and focus outlines, never for text on paper.
+- Text is about 14:1 on the background, quiet text about 9:1. Accents are still used sparingly: only for the dot, the hover bar, the charge ring and focus outlines, never for text on paper.
 - Header shows only 3 links. It may wrap to two lines at about 360px.
 - Placeholder labels (coming soon), dashes and the greyed project are visible on the page until filled.
 - Lens: the native mouse cursor stays visible when idle (the 10px ring trails it). It is hidden only while drilling.

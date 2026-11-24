@@ -26,8 +26,8 @@ const PEEL_CELLS_MAX = 36000; // about a full 1080p screen
 const MASK_SCALE = 2; // mask is sampled 2x2 per cell
 const MAX_BYTES = 8192;
 
-const BRIGHT = '#00E5FF';
-const FAINT = 'rgba(0, 229, 255, 0.14)';
+const BRIGHT = '#7FE3B8';
+const FAINT = 'rgba(127, 227, 184, 0.14)';
 const FONT_FAMILY = '"JetBrains Mono Variable", ui-monospace, Consolas, monospace';
 const MASK_FONT = '"Inter Variable", Inter, system-ui, sans-serif';
 

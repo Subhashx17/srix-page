@@ -12,11 +12,25 @@ import './styles/polish.css';
 
 import { content } from './content.js';
 import { renderSurface } from './surface.js';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { TextHoverEffect } from './components/ui/text-hover-effect.jsx';
 
 // Title and description now live in index.html (the single source of truth for SEO).
 document.documentElement.lang = content.site.lang;
 
 renderSurface(document.getElementById('app'), content);
+// Mount Aceternity's hover effect on the hero name.
+const heroName = document.getElementById('hero-name-effect');
+
+if (heroName) {
+  createRoot(heroName).render(
+    React.createElement(TextHoverEffect, {
+      text: content.person.name,
+      duration: 0.25,
+    })
+  );
+}
 
 // The deep overlay is decoration only: hidden from screen readers AND not focusable.
 const deepEl = document.getElementById('deep');

@@ -11,10 +11,10 @@ img {
   height: auto;
 }
 
-/* Contrast: about 6.3:1 on the paper color. */
+/* Contrast: about 9:1 on the paper color. */
 #surface .hero__hint,
 #surface .contact__plain-label {
-  color: #5a564d;
+  color: var(--ink-2);
 }
 
 /* Screenshot mode (?og): hide the buttons so the picture is clean. */
@@ -26,6 +26,6 @@ html.og-shot .sound-toggle {
 @media (prefers-contrast: more) {
   #surface .hero__hint,
   #surface .contact__plain-label {
-    color: #121212;
+    color: var(--ink);
   }
 }

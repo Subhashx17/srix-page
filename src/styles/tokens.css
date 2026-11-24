@@ -1,21 +1,24 @@
 :root {
   /* Layer colors (names fixed by the brief) */
-  --paper: #f3efe6;
-  --ink: #121212;
-  --accent: #ff4d00;
-  --bp: #0a2a5e;
-  --src: #0e0f12;
-  --mem: #000000;
-  --sil: #000000;
+  --paper: #ffddd3; /* dark indigo background */
+  --ink: #000000; /* pale celadon text */
+  /* Brand colors (dark indigo + celadon). Separate from shadcn's --accent. */
+  --brand: #9d9bf5; /* soft indigo: hover underlines, hover bar */
+  --celadon: #8fd0ae; /* celadon: the dot */
+  --brand-light: #8fd0ae; /* celadon: rings and focus outlines on the deep layers */
+  --bp: #26247f; /* blueprint: brighter indigo */
+  --src: #08130f; /* source: near-black celadon */
+  --mem: #06051a; /* memory: near-black indigo */
+  --sil: #04060f; /* silicon: near-black */
 
   /* Extra colors for the deep layers */
-  --amber: #ffb000;
-  --cyan: #00e5ff;
+  --amber: #b9b6ff; /* was amber: now light indigo */
+  --cyan: #7fe3b8; /* was cyan: now bright celadon */
 
   /* Surface helpers */
-  --ink-2: #5c584f; /* quiet text, about 6:1 on paper */
-  --line: rgba(18, 18, 18, 0.2); /* hairlines */
-  --grid-line: rgba(18, 18, 18, 0.04); /* faint vertical texture */
+  --ink-2: #a9bfb5; /* quiet text, about 9:1 on paper */
+  --line: rgba(228, 241, 232, 0.2); /* hairlines */
+  --grid-line: rgba(228, 241, 232, 0.04); /* faint vertical texture */
 
   /* Fonts */
   --font-head: 'Instrument Serif', Georgia, 'Times New Roman', serif;
@@ -51,5 +54,5 @@
   --dur: 700ms;
   --dur-fast: 220ms;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
